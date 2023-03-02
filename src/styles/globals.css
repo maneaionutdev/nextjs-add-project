@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input-class {
+    @apply w-full rounded-md focus:outline-none p-2;
+  }
+
+  .btn {
+    @apply rounded-md p-1.5 text-white;
+  }
+}
