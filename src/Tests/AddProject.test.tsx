@@ -49,7 +49,7 @@ describe('AddProject component', () => {
     );
   });
 
-  it('wont call if title is empty', () => {
+  it('wont call if link is invalid', () => {
     const onSubmitMock = jest.fn();
     const { getByTestId } = render(<AddProject onSubmit={onSubmitMock} />);
 
