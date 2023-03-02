@@ -14,7 +14,7 @@ const AddProject = ({ onSubmit, editData, cancelEdit }: AddProjectProps) => {
   const editMode = !!editData;
 
   useEffect(() => {
-    if (editData) {
+    if (editData && editMode === true) {
       const { title, description, link } = editData;
       setFormData({ title, description, link });
       setPreviewUrls(editData.images.map((image) => `/images/${image}`));
