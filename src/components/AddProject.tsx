@@ -35,6 +35,7 @@ const AddProject = ({ onSubmit, editData, cancelEdit }: AddProjectProps) => {
     }
 
     const validFiles: File[] = [];
+
     for (let i = 0; i < fileInput.files.length; i++) {
       const file = fileInput.files[i];
 
@@ -52,15 +53,7 @@ const AddProject = ({ onSubmit, editData, cancelEdit }: AddProjectProps) => {
       return;
     }
 
-    try {
-      setPreviewUrls((previewUrls) => [...previewUrls, ...validFiles.map((file) => URL.createObjectURL(file))]);
-
-      fileInput.type = 'text';
-      fileInput.type = 'file';
-    } catch (error) {
-      console.error(error);
-      alert('Sorry! something went wrong.');
-    }
+    setPreviewUrls((previewUrls) => [...previewUrls, ...validFiles.map((file) => URL.createObjectURL(file))]);
   };
 
   const handleUpload = async (e: FormEvent<HTMLFormElement>) => {
